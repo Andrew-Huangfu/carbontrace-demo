@@ -234,7 +234,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; box-shadow: var(--shadow); }
 .tile .label { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
 .tile .value { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; font-family: var(--font-num); }
-.tile .value .unit { font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 4px; }
+.tile .value .unit { font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 4px; display: inline-block; }
+.tile .value { overflow-wrap: anywhere; }
 .tile .delta { font-size: 12px; display: flex; align-items: center; gap: 6px; }
 .delta.up { color: var(--critical); }
 .delta.down { color: #0a7a0a; }
@@ -414,9 +415,13 @@ textarea.input { min-height: 72px; resize: vertical; width: 100%; }
   .menu-btn { display: inline-flex; }
   .sidebar-backdrop { display: block; }
   .topbar { gap: 8px; }
+  .topbar .page-title { min-width: 0; flex: 0 1 auto; }
+  .topbar h1 { font-size: 15px; overflow: hidden; text-overflow: ellipsis; }
+  .topbar .scope-select { min-width: 0; flex: 0 1 auto; }
+  .topbar .grow { flex: 1 0 4px; }
   .topbar .clock, .topbar .crumbs, .topbar .user-tag { display: none; }
   .topbar .theme-btn span { display: none; }
-  .scope-btn { max-width: 44vw; }
+  .scope-btn { max-width: 100%; }
   .scope-btn > span:first-of-type { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .scope-btn .lvl { display: none; }
   .form { grid-template-columns: 1fr; }

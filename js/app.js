@@ -86,7 +86,7 @@
       <div class="main">
         <header class="topbar">
           <button class="btn btn-ghost btn-icon menu-btn" @click="menuOpen = !menuOpen" aria-label="菜单"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-          <div><h1>{{ title }}</h1><div class="crumbs">{{ store.nodeName() }}</div></div>
+          <div class="page-title"><h1>{{ title }}</h1><div class="crumbs">{{ store.nodeName() }}</div></div>
           <ct-scope-select v-if="store.ready" :tree="store.tree" v-model="store.nodeId"></ct-scope-select>
           <span class="grow"></span>
           <span class="small muted num clock">{{ clock }} <span class="muted">(Asia/Shanghai)</span></span>

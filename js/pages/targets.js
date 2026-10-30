@@ -50,7 +50,7 @@
       </div>
       <div class="grid">
         <div class="card col-6 keep"><div class="card-h"><h3>碳强度趋势</h3><span class="sub">{{ store.nodeName() }} · tCO₂e / 万元产值</span></div><div class="card-b"><ct-chart :option="intOpt" height="240px"></ct-chart></div></div>
-        <div class="card col-6 keep"><div class="card-h"><h3>减排项目汇总</h3></div><div class="card-b"><div class="tiles" style="grid-template-columns:repeat(2,1fr)">
+        <div class="card col-6 keep"><div class="card-h"><h3>减排项目汇总</h3></div><div class="card-b"><div class="tiles" style="grid-template-columns:repeat(2,minmax(0,1fr))">
           <ct-tile label="项目数" :value="String(projects.summary.count || 0)" :sub="'规划 ' + (projects.summary.by_status||{}).planning + ' · 实施 ' + (projects.summary.by_status||{}).in_progress + ' · 完成 ' + (projects.summary.by_status||{}).completed"></ct-tile>
           <ct-tile label="累计投资" :value="projects.summary.investment_wan_yuan" unit="万元" :digits="0"></ct-tile>
           <ct-tile label="预期年减排" :value="projects.summary.expected_reduction_t" unit="tCO₂e" :digits="0"></ct-tile>

@@ -50,7 +50,7 @@
           <div class="card-h"><div><h3>{{ detail.title }}</h3><div class="sub">生成于 {{ CT.fmt.dt(detail.generated_at) }} · GWP {{ detail.summary.gwp_set }}</div></div><div class="tools"><button class="btn btn-sm btn-ghost" @click="detail=null">关闭</button></div></div>
           <div class="card-b stack">
             <ct-pipeline :steps="steps" :current="detail.status"></ct-pipeline>
-            <div class="tiles" style="grid-template-columns:repeat(2,1fr)">
+            <div class="tiles" style="grid-template-columns:repeat(2,minmax(0,1fr))">
               <ct-tile label="合计排放" :value="detail.summary.totals.total" unit="tCO₂e" :digits="0" :delta="detail.summary.yoy" delta-label="同比" invert></ct-tile>
               <ct-tile label="范围一 / 范围二" :value="CT.fmt.num(detail.summary.totals.scope1,0) + ' / ' + CT.fmt.num(detail.summary.totals.scope2,0)" :sub="'实测法 ' + CT.fmt.pct(detail.summary.totals.total ? (detail.summary.totals.measured||0)/detail.summary.totals.total : 0)"></ct-tile>
             </div>
