@@ -109,7 +109,7 @@
           <div class="card-b flush"><div class="table-wrap"><table class="tbl">
             <thead><tr><th>排放源</th><th>厂区</th><th>范围</th><th class="num">速率 tCO₂e/h</th><th style="width:34%">相对阈值</th></tr></thead>
             <tbody><tr v-for="s in ov.top_sources" :key="s.id">
-              <td>{{ s.name }}</td><td class="muted">{{ s.site_name }}</td><td><ct-tag :text="CT.label('scope', s.scope)"></ct-tag></td>
+              <td class="nowrap">{{ s.name }}</td><td class="muted nowrap">{{ s.site_name }}</td><td><ct-tag :text="CT.label('scope', s.scope)"></ct-tag></td>
               <td class="num">{{ CT.fmt.num(s.rate_t_h, 2) }}</td>
               <td><div class="ratebar"><ct-bar :value="rateOf(s)" :warn="0.9" :crit="1"></ct-bar><span class="small muted num">{{ s.threshold_t_h ? CT.fmt.pct(rateOf(s),0) : '无阈值' }}</span></div></td>
             </tr></tbody></table></div></div>
